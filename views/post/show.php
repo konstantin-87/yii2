@@ -13,10 +13,12 @@
 
 <h1>Show article</h1>
 
-<?php// debug($cats)?>
+<?php debug($cats); ?>
 
-<?php //dforeach; foreach($cats as $cat): ?>
-<?php //echo $cat->title . '<br />'?>
+<?php // foreach($cats as $cat):
+//         echo $cat->title . '<br />';
+//       endforeach;
+//?>
 
 
 <button class="btn btn-success" id="btn">Click me...</button>

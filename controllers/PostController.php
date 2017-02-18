@@ -37,10 +37,12 @@ class PostController extends AppController
 
         $model = new TestForm();
 
-        if( $model->load( Yii::$app->request->post()  ) ) {
+        if( $model->load( Yii::$app->request->post()) ) {
+//            debug( $model );
+//            die;
             if( $model->validate() ) {
                 Yii::$app->session->setFlash('success', 'Данные приняты');
-//                return $this->refresh();
+                //return $this->refresh();
             } else {
                 Yii::$app->session->setFlash('error', 'Ошибка');
             }
@@ -56,7 +58,7 @@ class PostController extends AppController
         $this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевики...']);
         $this->view->registerMetaTag(['name' => 'description', 'content' => 'описание страницы...']);
 
-//        $cats = Category::find()->all;
+//        $cats = Category::find()->all();
 //        $cats = Category::find()->orderBy(['id' => SORT_ASC])->all();
 //        $cats = Category::find()->asArray()->all();
 //        $cats = Category::find()->asArray()->where('parent = 691')->all();
@@ -70,7 +72,7 @@ class PostController extends AppController
 //        $cats = Category::findAll(['parent'=> 691]);
 //        $query = "SELECT * FROM categories WHERE title LIKE '%pp%'";
         $query = "SELECT * FROM categories WHERE title LIKE :search ";
-        $cats = Category::findBySql($query, [':search' => '%pp%'])->all();
+//        $cats = Category::findBySql($query, [':search' => '%pp%'])->all();
 
 
 
