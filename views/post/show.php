@@ -7,19 +7,23 @@
 <?php $this->endBlock()?>
 
 
+<?php $this->beginBlock('newBlock'); ?>
+    <p>New block</p>
+<?php $this->endBlock();?>
+
 <h1>Show article</h1>
 
-<?php debug($cats)?>
+<?php// debug($cats)?>
 
-<?php //dforeach;?>foreach($cats as $cat): ?>
+<?php //dforeach; foreach($cats as $cat): ?>
 <?php //echo $cat->title . '<br />'?>
-    <!---->
-    <!--    --><?php //en
 
 
 <button class="btn btn-success" id="btn">Click me...</button>
 
 <?php
+
+//$this->registerJsFile('@web/js/scripts.js', ['depends' => 'yii\web\YiiAsset'], '\yii\web\View::POS_LOAD');
 //$this->registerJsFile('@web/js/scripts.js',['depends' => 'yii\web\YiiAsset']);
 //$this->registerJs("$('.container').append('<p> Paragraph!!!</p>')", \yii\web\View::POS_LOAD)
 

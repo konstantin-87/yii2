@@ -28,9 +28,13 @@ AppAsset::register($this);
             <li role="presentation"><?= Html::a('Одна статья', ['/post/show'])?></li>
         </ul>
 
-    <?php if(isset($this->blocks['block1']) ) :
-     echo $this->blocks['block1'];
-     endif;?>
+    <?php
+//        debug($this->blocks);
+        if(isset($this->blocks['block1']) OR isset($this->blocks['newBlock'])) :
+            echo $this->blocks['block1'];
+            echo $this->blocks['newBlock'];
+         endif;
+    ?>
 
         <?= $content?>
     </div>
